@@ -11,11 +11,6 @@ agent:
   restart_drain_timeout: 180
   service_tier: ''
   tool_use_enforcement: auto
-approvals:
-  cron_mode: deny
-  mcp_reload_confirm: true
-  mode: manual
-  timeout: 60
 auxiliary:
   approval:
     api_key: ''
@@ -82,17 +77,6 @@ auxiliary:
     model: qwen/qwen3.5-flash-02-23
     provider: nous
     timeout: 360
-bedrock:
-  discovery:
-    enabled: true
-    provider_filter: []
-    refresh_interval: 3600
-  guardrail:
-    guardrail_identifier: ''
-    guardrail_version: ''
-    stream_processing_mode: async
-    trace: disabled
-  region: ''
 browser:
   allow_private_urls: false
   auto_local_for_private_urls: true
@@ -105,9 +89,6 @@ browser:
   dialog_timeout_s: 300
   inactivity_timeout: 120
   record_sessions: false
-code_execution:
-  mode: project
-command_allowlist: []
 compression:
   enabled: true
   hygiene_hard_message_limit: 400
@@ -116,41 +97,6 @@ compression:
   threshold: 0.95
 context:
   engine: compressor
-cron:
-  max_parallel_jobs: null
-  wrap_response: true
-curator:
-  archive_after_days: 90
-  backup:
-    enabled: true
-    keep: 5
-  enabled: true
-  interval_hours: 168
-  min_idle_hours: 2
-  stale_after_days: 30
-dashboard:
-  theme: default
-delegation:
-  api_key: ''
-  base_url: ''
-  child_timeout_seconds: 600
-  inherit_mcp_toolsets: true
-  max_concurrent_children: 3
-  max_iterations: 50
-  max_spawn_depth: 1
-  model: ''
-  orchestrator_enabled: true
-  provider: ''
-  reasoning_effort: ''
-  subagent_auto_approve: false
-discord:
-  allowed_channels: ''
-  auto_thread: true
-  channel_prompts: {}
-  free_response_channels: ''
-  reactions: true
-  require_mention: true
-  server_actions: ''
 display:
   bell_on_complete: false
   busy_input_mode: interrupt
@@ -185,98 +131,29 @@ fallback_providers: []
 file_read_max_chars: 100000
 goals:
   max_turns: 20
-honcho: {}
-hooks: {}
 hooks_auto_accept: false
-human_delay:
-  max_ms: 2500
-  min_ms: 800
-  mode: 'off'
-kanban:
-  dispatch_in_gateway: true
-  dispatch_interval_seconds: 60
 known_plugin_toolsets:
   cli:
   - spotify
-logging:
-  backup_count: 3
-  level: INFO
-  max_size_mb: 5
-mattermost:
-  channel_prompts: {}
-memory:
-  memory_char_limit: 2200
-  memory_enabled: true
-  provider: ''
-  user_char_limit: 1375
-  user_profile_enabled: true
 model:
+  base_url: ''
   default: qwen/qwen3.6-plus
   provider: nous
-model_catalog:
-  enabled: true
-  providers: {}
-  ttl_hours: 24
-  url: https://hermes-agent.nousresearch.com/docs/api/model-catalog.json
-network:
-  force_ipv4: false
-onboarding:
-  seen: {}
-openrouter:
-  response_cache: true
-  response_cache_ttl: 300
 personalities: {}
-platform_toolsets:
-  cli:
-  - browser
-  - clarify
-  - code_execution
-  - delegation
-  - file
-  - kanban
-  - memory
-  - terminal
-  - todo
-  - vision
-  - web
-privacy:
-  redact_pii: false
 prompt_caching:
   cache_ttl: 5m
 providers: {}
-quick_commands: {}
-security:
-  allow_private_urls: false
-  redact_secrets: false
-  tirith_enabled: true
-  tirith_fail_open: true
-  tirith_path: tirith
-  tirith_timeout: 5
-  website_blocklist:
-    domains: []
-    enabled: false
-    shared_files: []
+sessions:
+  auto_prune: false
+  min_interval_hours: 24
+  retention_days: 90
+  vacuum_after_prune: true
 skills:
   external_dirs: []
   guard_agent_created: false
   inline_shell: false
   inline_shell_timeout: 10
   template_vars: true
-slack:
-  channel_prompts: {}
-stt:
-  enabled: true
-  local:
-    language: ''
-    model: base
-  mistral:
-    model: voxtral-mini-latest
-  openai:
-    model: whisper-1
-  provider: local
-telegram:
-  channel_prompts: {}
-  reactions: false
 terminal:
   auto_source_bashrc: true
   backend: local
@@ -300,7 +177,6 @@ terminal:
   singularity_image: docker://nikolaik/python-nodejs:python3.11-nodejs20
   timeout: 180
   vercel_runtime: node24
-timezone: ''
 tool_loop_guardrails:
   hard_stop_after:
     exact_failure: 5
@@ -343,16 +219,5 @@ tts:
     language: en
     sample_rate: 24000
     voice_id: eve
-updates:
-  backup_keep: 5
-  pre_update_backup: false
-voice:
-  auto_tts: false
-  beep_enabled: true
-  max_recording_seconds: 120
-  record_key: ctrl+b
-  silence_duration: 3.0
-  silence_threshold: 200
 web:
   backend: firecrawl
-whatsapp: {}
