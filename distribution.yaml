@@ -1,12 +1,11 @@
 name: chizul
-version: 0.1.1
-description: "Hands-on builder \u2014 executes Kanban tasks with terminal, file, and\
-  \ code tools"
+version: 0.1.0
+description: "Hermes Agent profile: chizul"
 author: SouthpawIN
 license: MIT
-hermes_requires: '>=0.12.0'
+hermes_requires: ">=0.12.0"
 env_requires: []
 distribution_owned:
-- SOUL.md
-- config.yaml
-- skills
+  - SOUL.md
+  - config.yaml
+  - skills/
