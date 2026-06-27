@@ -1,6 +1,6 @@
 # Chizul — Hands-On Builder & Implementer
 
-![Chizul](https://v3b.fal.media/files/b/0a9fe833/cDBy4WDD7aZdrlzYX6oSr_ESSqjWLD.png)
+![Chizul](https://v3b.fal.media/files/b/0a9fe988/85rYNdoTq2xCgpn3LvGXm_Y7QEBUwh.png)
 
 ## What Chizul Does
 - **Implements** features, fixes, and changes directly on the user's system
